@@ -1,9 +1,9 @@
 {
-    "name": "scaleplan/rocketchar",
-    "description": "PHP SDK for RockerChat project",
+    "name": "scaleplan/rocketchat",
+    "description": "PHP SDK for RocketChat project",
     "autoload": {
         "psr-4": {
-            "Scaleplan\\RockerChat\\": "src/"
+            "Scaleplan\\RocketChat\\": "src/"
         }
     },
     "require": {
