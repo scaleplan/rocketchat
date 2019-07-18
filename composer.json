@@ -1,5 +1,5 @@
 {
-    "name": "scaleplan/rockerchar",
+    "name": "scaleplan/rocketchar",
     "description": "PHP SDK for RockerChat project",
     "autoload": {
         "psr-4": {
