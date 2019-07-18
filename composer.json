@@ -1,0 +1,13 @@
+{
+    "name": "scaleplan/rockerchar",
+    "description": "PHP SDK for RockerChat project",
+    "autoload": {
+        "psr-4": {
+            "Scaleplan\\RockerChat\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=7.0",
+        "scaleplan/http": "dev-master"
+    }
+}
