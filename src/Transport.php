@@ -94,7 +94,7 @@ class Transport
         /** @var RequestInterface $request */
         $request = get_required_container(RequestInterface::class, [$this->serviceUrl . $url, $data->toFullArray()]);
         if ($dtoClass) {
-            $request->setDtoClass(SuccessDTO::class);
+            $request->setDtoClass($dtoClass);
             $request->setValidationEnable(true);
         }
         $request->setMethod('POST');

@@ -8,7 +8,7 @@ use Scaleplan\RocketChat\DTO\Request\UserCreateDTO;
 use Scaleplan\RocketChat\DTO\Request\UserDeleteDTO;
 use Scaleplan\RocketChat\DTO\Response\SuccessDTO;
 use Scaleplan\RocketChat\DTO\Response\UserDTO;
-use Scaleplan\RocketChat\Exceptions\RocketChatException;
+use Scaleplan\RocketChat\Exceptions\MatrixException;
 
 /**
  * Class User
@@ -22,7 +22,7 @@ final class User extends AbstractAPI
      *
      * @return RemoteResponse
      *
-     * @throws RocketChatException
+     * @throws MatrixException
      * @throws \ReflectionException
      * @throws \Scaleplan\DTO\Exceptions\ValidationException
      * @throws \Scaleplan\DependencyInjection\Exceptions\ContainerTypeNotSupportingException
@@ -39,7 +39,7 @@ final class User extends AbstractAPI
         /** @var SuccessDTO $rocketData */
         $rocketData = $response->getResult();
         if (!$response->isOk() || !$rocketData->isSuccess()) {
-            throw new RocketChatException($response, 'User create failed.');
+            throw new MatrixException($response, 'User create failed.');
         }
 
         return $response;
@@ -50,7 +50,7 @@ final class User extends AbstractAPI
      *
      * @return RemoteResponse
      *
-     * @throws RocketChatException
+     * @throws MatrixException
      * @throws \ReflectionException
      * @throws \Scaleplan\DTO\Exceptions\ValidationException
      * @throws \Scaleplan\DependencyInjection\Exceptions\ContainerTypeNotSupportingException
@@ -67,7 +67,7 @@ final class User extends AbstractAPI
         /** @var SuccessDTO $rocketData */
         $rocketData = $response->getResult();
         if (!$response->isOk() || !$rocketData->isSuccess()) {
-            throw new RocketChatException($response, 'User delete failed.');
+            throw new MatrixException($response, 'User delete failed.');
         }
 
         return $response;
@@ -78,7 +78,7 @@ final class User extends AbstractAPI
      *
      * @return RemoteResponse
      *
-     * @throws RocketChatException
+     * @throws MatrixException
      * @throws \ReflectionException
      * @throws \Scaleplan\DTO\Exceptions\ValidationException
      * @throws \Scaleplan\DependencyInjection\Exceptions\ContainerTypeNotSupportingException
@@ -95,7 +95,7 @@ final class User extends AbstractAPI
         /** @var SuccessDTO $rocketData */
         $rocketData = $response->getResult();
         if (!$response->isOk() || !$rocketData->isSuccess()) {
-            throw new RocketChatException($response, 'User update failed.');
+            throw new MatrixException($response, 'User update failed.');
         }
 
         return $response;
@@ -106,7 +106,7 @@ final class User extends AbstractAPI
      *
      * @return RemoteResponse
      *
-     * @throws RocketChatException
+     * @throws MatrixException
      * @throws \ReflectionException
      * @throws \Scaleplan\DTO\Exceptions\ValidationException
      * @throws \Scaleplan\DependencyInjection\Exceptions\ContainerTypeNotSupportingException
@@ -123,7 +123,7 @@ final class User extends AbstractAPI
         /** @var SuccessDTO $rocketData */
         $rocketData = $response->getResult();
         if (!$response->isOk() || !$rocketData->isSuccess()) {
-            throw new RocketChatException($response, 'Avatar update failed.');
+            throw new MatrixException($response, 'Avatar update failed.');
         }
 
         return $response;
