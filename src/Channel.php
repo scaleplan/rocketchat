@@ -6,7 +6,7 @@ use Scaleplan\Http\RemoteResponse;
 use Scaleplan\RocketChat\DTO\Request\ChannelCreateDTO;
 use Scaleplan\RocketChat\DTO\Response\ChannelDTO;
 use Scaleplan\RocketChat\DTO\Response\SuccessDTO;
-use Scaleplan\RocketChat\Exceptions\MatrixException;
+use Scaleplan\RocketChat\Exceptions\RocketChatException;
 
 /**
  * Class User
@@ -20,7 +20,7 @@ final class Channel extends AbstractAPI
      *
      * @return RemoteResponse
      *
-     * @throws MatrixException
+     * @throws RocketChatException
      * @throws \ReflectionException
      * @throws \Scaleplan\DTO\Exceptions\ValidationException
      * @throws \Scaleplan\DependencyInjection\Exceptions\ContainerTypeNotSupportingException
@@ -36,8 +36,10 @@ final class Channel extends AbstractAPI
         $response = $this->api->send('/channels.create', $dto, ChannelDTO::class);
         /** @var SuccessDTO $rocketData */
         $rocketData = $response->getResult();
-        if (!$response->isOk() || !$rocketData->isSuccess()) {
-            throw new MatrixException($response, 'Channel create failed.');
+        if (!$rocketData->isSuccess()) {
+            throw new RocketChatException($response, 'Channel create failed.');
         }
+
+        return $response;
     }
 }

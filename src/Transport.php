@@ -8,7 +8,6 @@ use Scaleplan\Http\Constants\ContentTypes;
 use Scaleplan\Http\Interfaces\RequestInterface;
 use Scaleplan\Http\RemoteResponse;
 use Scaleplan\RocketChat\DTO\Response\AuthDataDTO;
-use Scaleplan\RocketChat\DTO\Response\SuccessDTO;
 use function Scaleplan\DependencyInjection\get_required_container;
 use function Scaleplan\Helpers\get_required_env;
 
