@@ -8,8 +8,6 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Class ChannelDTO
- *
- * @package App\DTO\Response
  */
 final class ChannelDTO extends DTO
 {

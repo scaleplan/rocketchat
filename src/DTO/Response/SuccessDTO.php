@@ -7,8 +7,6 @@ use Scaleplan\RocketChat\Traits\DTO\SuccessDTOTrait;
 
 /**
  * Class SuccessDTO
- *
- * @package App\DTO\Response
  */
 final class SuccessDTO extends DTO
 {

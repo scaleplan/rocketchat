@@ -8,8 +8,6 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Class UserDTO
- *
- * @package App\DTO\Response
  */
 final class UserDTO extends DTO
 {
